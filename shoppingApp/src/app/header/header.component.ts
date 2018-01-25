@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
+  isIn= false;   // store state
+  inMenu = false;
   constructor() { }
-
   ngOnInit() {
+  }
+  toggleState() { // click handler
+    this.isIn = !this.isIn;
+  }
+  menuDrop() {
+    this.inMenu = !this.inMenu;
   }
 
 }
